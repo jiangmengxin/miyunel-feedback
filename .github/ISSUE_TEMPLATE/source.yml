@@ -1,0 +1,46 @@
+name: 补充 / 更正信源
+description: 信源链接失效，或者有更权威的原始来源
+title: "[信源] "
+labels: ["信源"]
+body:
+  - type: markdown
+    attributes:
+      value: Miyunel 每条新闻都链接原始信源。发现链接打不开、指向转载，或者有官方原文，请告诉我们。
+  - type: input
+    id: page
+    attributes:
+      label: 页面链接
+    validations:
+      required: true
+  - type: input
+    id: episode
+    attributes:
+      label: 期号
+  - type: input
+    id: item
+    attributes:
+      label: 哪一条
+  - type: input
+    id: current
+    attributes:
+      label: 现在的信源链接
+  - type: dropdown
+    id: problem
+    attributes:
+      label: 问题
+      options:
+        - 链接打不开 / 已删除
+        - 指向转载，有原始来源
+        - 信源内容和新闻不符
+        - 其他
+    validations:
+      required: true
+  - type: input
+    id: better
+    attributes:
+      label: 建议的原始来源
+      placeholder: https://
+  - type: textarea
+    id: note
+    attributes:
+      label: 补充说明

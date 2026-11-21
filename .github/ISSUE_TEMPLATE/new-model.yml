@@ -1,0 +1,39 @@
+name: 提议收录新模型
+description: 有一个公开可用的新模型，榜单还没收录
+title: "[新模型] "
+labels: ["新模型"]
+body:
+  - type: markdown
+    attributes:
+      value: 榜单只收录**当前公开可用**、且每条产品线最新两代的语言模型；评测成绩来自公开榜单，会陆续补齐。
+  - type: input
+    id: page
+    attributes:
+      label: 从哪个页面来
+  - type: input
+    id: name
+    attributes:
+      label: 模型名称
+    validations:
+      required: true
+  - type: input
+    id: org
+    attributes:
+      label: 公司 / 机构
+  - type: input
+    id: release
+    attributes:
+      label: 官方发布页或 API 文档链接
+      placeholder: https://
+    validations:
+      required: true
+  - type: textarea
+    id: evals
+    attributes:
+      label: 已有的公开评测成绩（链接）
+      description: LMArena、LiveBench、Epoch AI 等，有几条写几条
+  - type: input
+    id: price
+    attributes:
+      label: 官方 API 价格页（如有）
+      placeholder: https://

@@ -1,0 +1,46 @@
+name: 榜单：分数 / 价格有误
+description: 模型榜单上的原始分、标准分、官方价格不对，或漏了某项公开评测
+title: "[榜单] "
+labels: ["榜单"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        榜单的原始分来自 LMArena、LiveBench、Epoch AI、ARC Prize、MathArena 等公开数据，价格只收官网**标准价**（不收限时 / 推广 / Batch 价）。
+        计分方法见 https://miyunel.com/about/#lb-rank 。
+  - type: input
+    id: page
+    attributes:
+      label: 页面链接
+  - type: input
+    id: model
+    attributes:
+      label: 模型
+      placeholder: Claude Opus 5.5（claude-opus-5.5）
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: 问题类型
+      options:
+        - 分数或原始分有误
+        - 官方价格有误或已调价
+        - 漏了某项公开评测成绩
+        - 其他
+    validations:
+      required: true
+  - type: textarea
+    id: detail
+    attributes:
+      label: 具体情况
+      description: 页面上写的是什么、应该是什么
+    validations:
+      required: true
+  - type: input
+    id: evidence
+    attributes:
+      label: 依据（评测榜单或官网价格页链接）
+      placeholder: https://
+    validations:
+      required: true

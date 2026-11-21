@@ -1,0 +1,39 @@
+name: 新闻纠错
+description: 日报某一条的事实、数字、日期或翻译有误
+title: "[纠错] "
+labels: ["纠错"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        谢谢帮忙纠错！从网站上的「纠错」链接点进来时，页面、期号和条目已经自动填好。
+        请尽量附上能证明的**原始来源**（官方公告、论文、原始报道），我们核对后会更正并在这里回复。
+  - type: input
+    id: page
+    attributes:
+      label: 页面链接
+      placeholder: https://miyunel.com/ai-daily/2026-11-21/#s1
+    validations:
+      required: true
+  - type: input
+    id: episode
+    attributes:
+      label: 期号
+      placeholder: 第 52 话（2026-11-21）
+  - type: input
+    id: item
+    attributes:
+      label: 哪一条
+      placeholder: 第 1 条：标题
+  - type: textarea
+    id: wrong
+    attributes:
+      label: 哪里不对
+      description: 引用页面上的原句，说明应该是什么
+    validations:
+      required: true
+  - type: input
+    id: evidence
+    attributes:
+      label: 依据（原始来源链接）
+      placeholder: https://
